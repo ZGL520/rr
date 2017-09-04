@@ -34,7 +34,7 @@ class LogIn extends React.Component{
   render(){
     return(
       <div>
-        <Header title='用户登录' rightLink='/posts' rightLinkContent='用户登录'/>
+        <Header title='用户登录' rightLink='/' rightLinkContent='返回'/>
         <LoginUi/>
       </div>
 

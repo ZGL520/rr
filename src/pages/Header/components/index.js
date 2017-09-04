@@ -7,9 +7,8 @@ class HeaderComponent extends React.Component {
     render() {
         return (
             <div>
-                <NavBar leftContent={<Link className='fontWhite' to='/'><icon className="icon-home3"/></Link> }
+                <NavBar leftContent={<Link className='fontWhite' to='/'><i className="icon-home2"/></Link> }
                         mode="dark"
-                         // onLeftClick={() => console.log('onLeftClick')}
                          rightContent={[
                              <Link className='fontWhite' key='1' to={this.props.rightLink}>{this.props.rightLinkContent}</Link>
                          ]}

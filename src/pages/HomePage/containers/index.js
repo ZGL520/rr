@@ -8,7 +8,7 @@ class HomePage extends React.Component {
     render() {
         return (
             <div>
-                <Header title='标题' rightLink='/posts' rightLinkContent='我的app'/>
+                <Header title='标题' rightLink='/' rightLinkContent='主页'/>
                 <List className="my-list">
                     <Item><Link className='fontBlack' to="/login">用户登陆</Link></Item>
                     <Item><Link className='fontBlack' to="/contactus">联系我们</Link></Item>
