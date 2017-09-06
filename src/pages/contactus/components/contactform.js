@@ -62,7 +62,7 @@ class ContactForm extends Component{
     margin:'10px',
   }
   render(){
-    const { handleSubmit, pristine, reset, submitting } = this.props
+    const { handleSubmit, submitting } = this.props
     return (
       <form onSubmit={handleSubmit}>
         <div>
