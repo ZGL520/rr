@@ -6,26 +6,28 @@ import PureRenderMixin from 'react-addons-pure-render-mixin'
 class LoginUi extends React.Component{
     constructor(props){
         super(props);
-        this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this)
+        this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
     }
 
-    componentWillMount(){
-        // console.log(this.props);
-        // console.log(this.props.loginsub,'asdf');
-        // console.log(this.props.loginsub);
+    componentDidMount(){
+
     }
 
     render(){
         return (
             <div>
                 <h1>登陆测试</h1>
-                <LoginUiform style={this.style}/>
+                <LoginUiform style={this.style} testlogin={this.props.logininfotest}/>
             </div>
         )
     }
 }
 
 
+function mapStateToProps(state) {
+    return {
+        logininfotest:state.form.testlogin
+    }
+}
 
-
-export default LoginUi
+export default connect(mapStateToProps)(LoginUi)

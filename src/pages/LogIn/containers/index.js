@@ -23,11 +23,8 @@ class LogIn extends React.Component{
       const da = querystring.stringify(date);
       const logind = postRequest(url,da);
       logind.then((res) => {
-          console.log(res.data);
           sessionStorage.setItem(login,res.data.content.user_token);
-          // sessionStorage.setItem(login.id,res.data.content.id);
           const logininfo = sessionStorage.getItem(login);
-          console.log(logininfo);
           this.props.login(logininfo);
       });
   }
@@ -35,6 +32,9 @@ class LogIn extends React.Component{
     return(
       <div>
         <Header title='用户登录' rightLink='/' rightLinkContent='返回'/>
+          <div>
+              <p style={{wordWrap:'break-word'}}><span>token:</span>{this.props.logintoken}</p>
+          </div>
         <LoginUi/>
       </div>
 
@@ -43,7 +43,7 @@ class LogIn extends React.Component{
 }
 function mapStateToProps(state) {
     return{
-        login:state.login,
+        logintoken:state.Login,
     }
 }
 export default connect(mapStateToProps,{login})(LogIn)

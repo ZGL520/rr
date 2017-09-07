@@ -1,6 +1,20 @@
 import React from 'react'
+import {Field,reduxForm} from 'redux-form'
+
+class inputField extends React.Component{
+    render(){
+        let {label,input,type} = this.props;
+        return(
+
+            <div>
+                <label>{label}</label>
+                <input {...input} placeholder={label} type={type} style={{marginTop:20+'px'}} />
+            </div>
+        )
+    }
 
 
+}
 class LoginUiform extends React.Component{
 
     constructor(props){
@@ -23,15 +37,13 @@ class LoginUiform extends React.Component{
     };
 
     componentWillMount(){
-        console.log(this.props.logininfo)
     }
 
     handleSubmit = (e) => {
         e.preventDefault();
-        console.log(this.name,'1234');
+        console.log(this.props.testlogin.values)
     };
 
-    
     render(){
         return (
             <div>
@@ -39,9 +51,9 @@ class LoginUiform extends React.Component{
                     <div>
                         <p>登录</p>
                     </div>
-                    <input type="text" name="name" placeholder='名字' onInput={this.handleInput} is twoWay={'name'} onChange={this.onChangeText}/>
-                    <input type="password" name="password" placeholder='密码'/> <br/>
-                    <input type="submit" style={this.btn}/>
+                    <Field name="name" component={inputField}/>
+                    <Field name="password" component={inputField}/>
+                    <button type="submit" style={this.btn}>submit</button>
                 </form>
                 <div>
                     <p>{this.state.name}</p>
@@ -51,4 +63,6 @@ class LoginUiform extends React.Component{
     }
 }
 
-export default LoginUiform;
+export default reduxForm({
+    form:'testlogin'
+})(LoginUiform);
