@@ -3,7 +3,8 @@ import {connect} from 'react-redux'
 
 class LoginStatus extends React.Component{
     componentWillMount(){
-        console.log(this.props.loginstatus);
+        console.log(sessionStorage.getItem('bkusername'));
+        console.log(sessionStorage.getItem('bktoken'));
     }
     render(){
 

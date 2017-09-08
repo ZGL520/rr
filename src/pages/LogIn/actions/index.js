@@ -4,7 +4,7 @@ const loginstatusActionlogined = function(data) {
     return{
         type:LOGINSTATUSLOGINED,
         account:data.username,
-        token:data.user_token
+        token:data.usertoken
     };
 };
 const loginstatusActionlogining = function(data) {

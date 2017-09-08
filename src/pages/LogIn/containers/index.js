@@ -1,5 +1,4 @@
 import React from 'react';
-import bindActionCreators from 'redux'
 import {render} from 'react-dom';
 import Header from '../../Header/components';
 import { postRequest} from '../../../common/fetch/requests';
@@ -21,13 +20,19 @@ class LogIn extends React.Component{
       const da = querystring.stringify(this.props.logininfotest.values);
       const logind = postRequest(url,da);
       logind.then((res) => {
-          this.props.loginstatusActionlogined(res.data.content);
+          sessionStorage.setItem('bkusername',res.data.content.username);
+          sessionStorage.setItem('bktoken',res.data.content.user_token);
+          const username = sessionStorage.getItem('bkusername');
+          const usertoken = sessionStorage.getItem('bktoken');
+          const datas = {username,usertoken};
+          this.props.loginstatusActionlogined(datas);
       });
-  }
+  };
   render(){
 
       if (this.props.logintoken.status == "logining"){
-          this.loginsub()
+
+          this.loginsub();
 
           return(
               <div>

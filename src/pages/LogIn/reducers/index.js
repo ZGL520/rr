@@ -1,6 +1,5 @@
 import {LOGINSTATUSLOGINED, LOGINSTATUSLOGINING, LOGINSTATUSUNLOGIN} from "../constants/index";
 
-
 const loginstatusReducer = (state={status:'unlogin',account:'',token:''}, action) => {
     switch (action.type){
         case LOGINSTATUSUNLOGIN:
