@@ -1,19 +1,16 @@
-import {LOGINSTATUSLOGINED, LOGINSTATUSLOGINING, LOGINSTATUSUNLOGIN,LOGIN} from "../constants/index";
+import {LOGINSTATUSLOGINED, LOGINSTATUSLOGINING, LOGINSTATUSUNLOGIN} from "../constants/index";
 
 
-const loginstatusReducer = (state={status:'unlogin'}, action) => {
+const loginstatusReducer = (state={status:'unlogin',account:'',token:''}, action) => {
     switch (action.type){
-        case LOGIN:
-            return state.loginStatus = {};
         case LOGINSTATUSUNLOGIN:
-            return state.loginStatus = {status:'unlogin',};
+            return state = {status:'unlogin',account:'',token:''};
         case LOGINSTATUSLOGINED:
-            return state.loginStatus = {status:'logined',account:action.data};
+            return state = {status:'logined',account:action.account,token:action.token};
         case LOGINSTATUSLOGINING:
-            return state.loginStatus = {status:'logining',account:''};
+            return state.status = {status:'logining',account:'',token:''};
         default:
             return state
     }
 };
-
 export default loginstatusReducer;

@@ -4,7 +4,6 @@ import thunkMiddleware from 'redux-thunk'
 import promiseMiddleware from 'redux-promise';
 import { createLogger } from 'redux-logger'
 import rootReducer from '../reducers/rootReducer'
-import {selectSubredditd,fetchPostsd} from '../../pages/test1/actions/index'
 
 
 function configureStore() {

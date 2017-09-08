@@ -1,5 +1,10 @@
 import React from 'react'
-import {Field,reduxForm} from 'redux-form'
+import {Field,reduxForm} from 'redux-form';
+import querystring from 'querystring'
+import {postRequest} from "../../../common/fetch/requests"
+import login from '../actions/index'
+import {connect} from 'react-redux'
+import loginstatusActionlogining from '../actions/index'
 
 class inputField extends React.Component{
     render(){
@@ -12,8 +17,6 @@ class inputField extends React.Component{
             </div>
         )
     }
-
-
 }
 class LoginUiform extends React.Component{
 
@@ -36,14 +39,11 @@ class LoginUiform extends React.Component{
         marginTop:'20px'
     };
 
-    componentWillMount(){
-    }
-
     handleSubmit = (e) => {
         e.preventDefault();
-        console.log(this.props.testlogin.values)
-    };
 
+        this.props.loginfun();
+    };
     render(){
         return (
             <div>
@@ -51,7 +51,7 @@ class LoginUiform extends React.Component{
                     <div>
                         <p>登录</p>
                     </div>
-                    <Field name="name" component={inputField}/>
+                    <Field name="username" component={inputField}/>
                     <Field name="password" component={inputField}/>
                     <button type="submit" style={this.btn}>submit</button>
                 </form>
@@ -62,7 +62,6 @@ class LoginUiform extends React.Component{
         )
     }
 }
-
 export default reduxForm({
     form:'testlogin'
 })(LoginUiform);

@@ -17,8 +17,6 @@ import './src/common/static/css/font.css';
 import HomePage from './src/pages/HomePage/containers';
 import LogIn from './src/pages/LogIn/containers';
 import ContactUs from './src/pages/contactus/containers/index';
-import LogTest from "./src/pages/test/containers/index";
-import Logindd  from "./src/pages/test1/containers/index"
 
 
 const store = configureStore();
@@ -30,8 +28,6 @@ render(
         <Switch>
             <Route path ='/login' component={LogIn} />
             <Route path='/contactus' component={ContactUs}/>
-            <Route path = '/test' component={LogTest}/>
-            <Route path='/test1' component={Logindd}/>
             <Route path ='/' component={HomePage} />
             <Route render={( )=>{
                 return (

@@ -2,8 +2,8 @@ import React from 'react';
 import {connect} from 'react-redux'
 
 class LoginStatus extends React.Component{
-    componentDidMount(){
-        console.log(this.props.loginstatus)
+    componentWillMount(){
+        console.log(this.props.loginstatus);
     }
     render(){
 
@@ -13,16 +13,18 @@ class LoginStatus extends React.Component{
                         <p>未登录</p>
                     </div>
                 )
-            }else if(this.props.loginstatus.status == 'logining'){
+            }else if(this.props.loginstatus.status == "logining"){
                 return(
                     <div>
                         <p>正在登录</p>
                     </div>
                 )
-            }else if(this.props.loginstatus.status == 'logined'){
+            }else if(this.props.loginstatus.status == "logined"){
                 return(
                     <div>
                         <p>已登录</p>
+                        <p><span>账号</span>{this.props.loginstatus.account}</p>
+                        <p style={{wordWrap:'break-word'}}><span>token</span>{this.props.loginstatus.token}</p>
                     </div>
                 )
             }else {

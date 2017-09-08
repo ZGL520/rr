@@ -3,10 +3,11 @@ import {LOGINSTATUSLOGINED, LOGINSTATUSLOGINING, LOGINSTATUSUNLOGIN} from "../co
 const loginstatusActionlogined = function(data) {
     return{
         type:LOGINSTATUSLOGINED,
-        data
+        account:data.username,
+        token:data.user_token
     };
 };
-const loginstatusActionlogining = data => {
+const loginstatusActionlogining = function(data) {
     return{
         type:LOGINSTATUSLOGINING,
         data
@@ -19,7 +20,5 @@ const loginstatusActionunlogin = data => {
         data
     }
 };
-
-// export default login;
 
 export default {loginstatusActionlogined,loginstatusActionlogining,loginstatusActionunlogin};
