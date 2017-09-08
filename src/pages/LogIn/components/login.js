@@ -1,10 +1,5 @@
 import React from 'react'
 import {Field,reduxForm} from 'redux-form';
-import querystring from 'querystring'
-import {postRequest} from "../../../common/fetch/requests"
-import login from '../actions/index'
-import {connect} from 'react-redux'
-import loginstatusActionlogining from '../actions/index'
 
 class inputField extends React.Component{
     render(){

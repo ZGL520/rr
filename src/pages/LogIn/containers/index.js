@@ -6,8 +6,6 @@ import { postRequest} from '../../../common/fetch/requests';
 import querystring from 'querystring';
 import {connect} from 'react-redux';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
-// import bindActionCreators from 'react'
-import loginstatusActionlogining from '../actions/index'
 import loginstatusActionlogined from '../actions/index'
 import LoginUi from '../components/index'
 
@@ -19,17 +17,10 @@ class LogIn extends React.Component{
 
 
   loginsub = () => {
-      // console.log('qwre',this.props.logininfotest.values);
       const url = 'http://kb.buyercamp.com/apir/user/login';
       const da = querystring.stringify(this.props.logininfotest.values);
-      console.log(da)
       const logind = postRequest(url,da);
       logind.then((res) => {
-          // 将user_token加如sessionStorage
-          // sessionStorage.setItem(login,res.data.content.user_token);
-          // const logininfo = sessionStorage.getItem(login);
-          // this.props.login(logininfo);
-          //     console.log(res.data.content);
           this.props.loginstatusActionlogined(res.data.content);
       });
   }
@@ -72,7 +63,4 @@ function mapStateToProps(state) {
         logininfotest:state.form.testlogin
     }
 }
-// function mapDispatchToState(loginstatusActionlogined,dispatch) {
-//     loginstatusActionlogined:bindActionCreators(loginstatusActionlogined,dispatch)
-// }
 export default connect(mapStateToProps,loginstatusActionlogined)(LogIn)
