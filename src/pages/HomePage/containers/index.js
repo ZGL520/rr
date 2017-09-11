@@ -4,8 +4,8 @@ import { List } from 'antd-mobile';
 import PureRenderMixin from 'react-addons-pure-render-mixin'
 import Header from '../../../pages/Header/components';
 import LoginStatus from '../components/longinstatus';
-import loginstatusActionunlogin from '../../LogIn/actions/index'
-import loginstatusActionlogined from '../../LogIn/actions/index'
+import {bindActionCreators} from 'redux'
+import loginstatusAction from '../../LogIn/actions/index'
 import {connect} from 'react-redux'
 const Item = List.Item;
 
@@ -18,12 +18,11 @@ class HomePage extends React.Component {
     componentDidMount(){
         const username = sessionStorage.getItem('bkusername');
         const usertoken = sessionStorage.getItem('bktoken');
-        console.log(username,usertoken);
         if(username != null || usertoken != null){
             const datas = {username,usertoken};
-            this.props.loginstatusActionlogined(datas);
+            this.props.loginactions.loginstatusActionlogined(datas);
         }else {
-            loginstatusActionunlogin
+            this.props.loginactions.loginstatusActionunlogin
         }
     }
     render() {
@@ -51,5 +50,10 @@ function mapStateToProps(state) {
         // logininfotest:state.form.testlogin
     }
 }
-export default connect(mapStateToProps,loginstatusActionunlogin)(HomePage);
+const mapDispatchToProps = dispatch => {
+    return{
+        loginactions:bindActionCreators(loginstatusAction,dispatch)
+    }
+};
+export default connect(mapStateToProps,mapDispatchToProps)(HomePage);
 

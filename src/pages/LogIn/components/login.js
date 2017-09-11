@@ -1,11 +1,11 @@
 import React from 'react'
 import {Field,reduxForm} from 'redux-form';
 
+// input组件
 class inputField extends React.Component{
     render(){
         let {label,input,type} = this.props;
         return(
-
             <div>
                 <label>{label}</label>
                 <input {...input} placeholder={label} type={type} style={{marginTop:20+'px'}} />
@@ -13,16 +13,17 @@ class inputField extends React.Component{
         )
     }
 }
+
+// 输入登陆信息组件
 class LoginUiform extends React.Component{
 
     constructor(props){
         super(props);
         this.state = {
             name:'',
-            password:''
         };
     }
-
+// 定义样式
     style = {
         textAlign:'center',
     };
@@ -34,11 +35,12 @@ class LoginUiform extends React.Component{
         marginTop:'20px'
     };
 
+    // 点击提交时出发函数
     handleSubmit = (e) => {
         e.preventDefault();
-
         this.props.loginfun();
     };
+
     render(){
         return (
             <div>
@@ -57,6 +59,7 @@ class LoginUiform extends React.Component{
         )
     }
 }
+
 export default reduxForm({
     form:'testlogin'
 })(LoginUiform);

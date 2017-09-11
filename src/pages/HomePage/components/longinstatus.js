@@ -1,10 +1,11 @@
 import React from 'react';
 import {connect} from 'react-redux'
 
+// 登录状态
 class LoginStatus extends React.Component{
     componentWillMount(){
-        console.log(sessionStorage.getItem('bkusername'));
-        console.log(sessionStorage.getItem('bktoken'));
+        // console.log(sessionStorage.getItem('bkusername'));
+        // console.log(sessionStorage.getItem('bktoken'));
     }
     render(){
 
@@ -38,9 +39,12 @@ class LoginStatus extends React.Component{
     }
 
 }
+
+
 const mapStateToProps = state => {
     return {
         loginstatus:state.loginstatusReducer
     }
 };
+
 export default connect(mapStateToProps)(LoginStatus);

@@ -1,11 +1,12 @@
 import React from 'react';
 import {render} from 'react-dom';
 import Header from '../../Header/components';
-import { postRequest} from '../../../common/fetch/requests';
+import {postRequest} from '../../../common/fetch/requests';
 import querystring from 'querystring';
 import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux'
 import PureRenderMixin from 'react-addons-pure-render-mixin';
-import loginstatusActionlogined from '../actions/index'
+import loginstatusAction from '../actions/index'
 import LoginUi from '../components/index'
 
 class LogIn extends React.Component{
@@ -20,20 +21,22 @@ class LogIn extends React.Component{
       const da = querystring.stringify(this.props.logininfotest.values);
       const logind = postRequest(url,da);
       logind.then((res) => {
+          // 将登录返回数据添加到sessionStorage
           sessionStorage.setItem('bkusername',res.data.content.username);
           sessionStorage.setItem('bktoken',res.data.content.user_token);
+          // 从sessionStorage获取用户存储的信息
           const username = sessionStorage.getItem('bkusername');
           const usertoken = sessionStorage.getItem('bktoken');
           const datas = {username,usertoken};
-          this.props.loginstatusActionlogined(datas);
+          // 将用户信息存储到store
+          this.props.loginactions.loginstatusActionlogined(datas);
       });
   };
+
   render(){
-
+      // 根据登录状态输出不同信息
       if (this.props.logintoken.status == "logining"){
-
           this.loginsub();
-
           return(
               <div>
                   <Header title='用户登录' rightLink='/' rightLinkContent='返回'/>
@@ -62,10 +65,18 @@ class LogIn extends React.Component{
 
   }
 }
-function mapStateToProps(state) {
+
+
+const mapStateToProps = state => {
     return{
         logintoken:state.loginstatusReducer,
         logininfotest:state.form.testlogin
     }
-}
-export default connect(mapStateToProps,loginstatusActionlogined)(LogIn)
+};
+
+const mapDispatchToProps = dispatch => {
+    return{
+        loginactions:bindActionCreators(loginstatusAction,dispatch)
+    }
+};
+export default connect(mapStateToProps,mapDispatchToProps)(LogIn)
