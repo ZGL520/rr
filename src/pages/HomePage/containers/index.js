@@ -28,12 +28,11 @@ class HomePage extends React.Component {
     render() {
         return (
             <div>
-                <Header title='标题' rightLink='/' rightLinkContent='主页'/>
-                <List className="my-list">
-                    <Item><Link className='fontBlack' to="/login">用户登陆</Link></Item>
+                <Header title='主页' rightLink='/login' rightLinkContent='登录'/>
+                <List>
                     <Item><Link className='fontBlack' to="/contactus">联系我们</Link></Item>
                 </List>
-                <div>
+                <div className='loginstatus'>
                     <h3>登陆状态</h3>
                     <div>
                         <LoginStatus/>

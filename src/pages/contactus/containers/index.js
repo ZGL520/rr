@@ -1,9 +1,8 @@
 import React from 'react'
 import Header from '../../../pages/Header/components';
 import ContactForm from '../components/contactform'
-import ContactUsForm from '../components/infolist'
-import { Field, reduxForm } from 'redux-form';
-import {postRequest,fpostRequest,qspost} from '../../../common/fetch/requests'
+
+import {qspost} from '../../../common/fetch/requests'
 
 class ContactUs extends React.Component{
   submit = (values) => {
@@ -15,11 +14,13 @@ class ContactUs extends React.Component{
   render(){
     return(
       <div>
-        <Header title="" rightLink="/posts" rightLinkContent="近期热帖"/>
-        <h1>hello,here is contact us</h1>
-        <div>
-          <ContactForm onSubmit={this.submit}/>
-        </div>
+        <Header title="contactUs" rightLink="/posts" rightLinkContent="返回"/>
+          <div className='contactus'>
+              <h1>hello,here is contact us</h1>
+              <div>
+                  <ContactForm onSubmit={this.submit}/>
+              </div>
+          </div>
       </div>
     )
   }

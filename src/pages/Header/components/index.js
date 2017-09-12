@@ -7,12 +7,12 @@ class HeaderComponent extends React.Component {
     render() {
         return (
             <div>
-                <NavBar leftContent={<Link className='fontWhite' to='/'><i className="icon-home2"/></Link> }
-                        mode="dark"
+                <NavBar leftContent={<Link className='fontWhite icon-home2' to='/'></Link>}
                          rightContent={[
                              <Link className='fontWhite' key='1' to={this.props.rightLink}>{this.props.rightLinkContent}</Link>
                          ]}
-                >{this.props.title}</NavBar>
+                >{this.props.title}
+                </NavBar>
             </div>
         )
     }

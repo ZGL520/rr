@@ -16,7 +16,7 @@ class LogIn extends React.Component{
   }
 
 
-  loginsub = () => {
+  loginSub = () => {
       const url = 'http://kb.buyercamp.com/apir/user/login';
       const da = querystring.stringify(this.props.logininfotest.values);
       const logind = postRequest(url,da);
@@ -36,27 +36,24 @@ class LogIn extends React.Component{
   render(){
       // 根据登录状态输出不同信息
       if (this.props.logintoken.status == "logining"){
-          this.loginsub();
+          this.loginSub();
           return(
-              <div>
+              <div className='userloginstatus'>
                   <Header title='用户登录' rightLink='/' rightLinkContent='返回'/>
                   <p>正在登陆</p>
               </div>
           )
       }else if (this.props.logintoken.status == "unlogin"){
           return(
-              <div>
+              <div className='userloginstatus'>
                   <Header title='用户登录' rightLink='/' rightLinkContent='返回'/>
-                  <div>
-                      <p style={{wordWrap:'break-word'}}><span>token:{this.props.logintoken.token}</span>{}</p>
-                  </div>
                   <LoginUi/>
               </div>
 
           )
       }else if (this.props.logintoken.status == "logined"){
           return(
-              <div>
+              <div className='userloginstatus'>
                   <Header title='用户登录' rightLink='/' rightLinkContent='返回'/>
                   <p>登录成功</p>
               </div>

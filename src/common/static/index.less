@@ -1,0 +1,227 @@
+
+@buttoncolor:#8bc53f;
+@bordergrey:1px solid grey;
+@textcenter:center;
+@margincenter:0 auto;
+@padding:10px 20px;
+@fontcolor:purple;
+@fontcolorwhite:white;
+@fontsoze16:16px;
+@width90:90%;
+@maringtop:30px;
+
+body{
+  font-size: 16px;
+}
+//首页登录状态样式
+.loginstatus{
+  h3 {
+    color:@buttoncolor;
+    margin:@margincenter;
+    text-align: @textcenter;
+    margin-top: @maringtop;
+  };
+}
+//登陆注册组件UI
+.loginui{
+  width: @width90*0.9;
+  border: @bordergrey;
+  text-align: center;
+  margin: @margincenter;
+  margin-top: @maringtop;
+  border-radius: 15px;
+}
+
+//登录表单样式
+.loginform{
+  form{
+    div{
+      p:nth-child(1){
+        font-size: 27px;
+        color: #2D3B96;
+        margin-top: @maringtop;
+        margin-bottom: @maringtop;
+      }
+      p:nth-child(2){
+        color: #808080;
+        font-size: 14px;
+      }
+    }
+    button{
+      display: block;
+      width: @width90;
+      background-color: @buttoncolor;
+      margin: @margincenter;
+      border: none;
+      height: 65px;
+      margin-top: @maringtop;
+      margin-bottom: @maringtop;
+      font-size: @fontsoze16;
+      color: @fontcolorwhite;
+      border-radius: 15px;
+    }
+  }
+}
+
+//input组件样式
+.inputcomponent{
+  div{
+    width: @width90;
+    margin: @margincenter;
+    margin-top: @maringtop;
+    height: 70px;
+    border:  1px solid #8bc53f;
+    border-radius: 15px;
+    input{
+      display: block;
+      width: @width90;
+      margin: @margincenter;
+      margin-top: 20px;
+      font-size: @fontsoze16;
+      line-height: 30px;
+    }
+  }
+}
+
+//首页登录状态组件样式
+.iflogin{
+  width: @width90;
+  border: @bordergrey;
+  margin: @margincenter;
+  margin-top: @maringtop;
+  padding: @padding;
+  p{
+    letter-spacing: 1px;
+    line-height: 1.5em;
+  }
+  p:nth-child(1){
+    text-align: @textcenter;
+  }
+  p:nth-child(2){
+    span:nth-child(2){
+      color: @fontcolor;
+      color: @fontcolor;
+    }
+  }
+  p:nth-last-child(1){
+    word-wrap: break-word;
+    span:nth-child(2){
+      color:@fontcolor;
+    }
+  }
+}
+
+//正在登陆和登陆成功组件样式
+.userloginstatus{
+  p{
+    text-align: @textcenter;
+  }
+}
+
+//header样式处理
+.am-navbar-left-icon{
+  display: none !important;
+}
+
+
+//contactUS样式
+.contactus{
+  border: @bordergrey;
+  width: @width90;
+  margin: @margincenter;
+  border-radius: 10px;
+  h1{
+    color: #060E9F;
+    font-size: 26px;
+    margin-left: 5%;
+  }
+}
+
+.contactusinput{  
+  div{
+    width: @width90;
+    margin: @margincenter;
+    margin-top: @maringtop;
+    height: 70px;
+    border:  1px solid #8bc53f;
+    border-radius: 15px;
+    input{
+      display: block;
+      width: @width90;
+      margin: @margincenter;
+      margin-top: 20px;
+      font-size: @fontsoze16;
+      line-height: 30px;
+    }
+  }
+  p{
+    .text-danger{
+      font-size: @fontsoze16;
+      color: red;
+      margin-left: 5%;
+    }
+  }
+}
+
+.contactusform{
+  h2{
+    color: #060E9F;
+    font-size: 26px;
+    margin-left: 5%;
+  }
+  .contactusinfo{
+    margin-top: @maringtop;
+    p{
+      font-size: 18px;
+      color: #060E9F;
+      margin-left: 5%;
+      line-height: 1.5em;
+    }
+  }
+  .contactusquestion{
+    margin-top: @maringtop*2;
+    p{
+      font-size: 18px;
+      color: @buttoncolor;
+      margin-left: 5%;
+      line-height: 1.5em;
+    }
+  }
+  button{
+    display: block;
+    width: @width90;
+    background-color: @buttoncolor;
+    margin: @margincenter;
+    border: none;
+    height: 65px;
+    margin-top: @maringtop;
+    margin-bottom: @maringtop;
+    font-size: @fontsoze16;
+    color: @fontcolorwhite;
+    border-radius: 15px;
+  };
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

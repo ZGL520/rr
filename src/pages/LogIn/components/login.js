@@ -6,9 +6,10 @@ class inputField extends React.Component{
     render(){
         let {label,input,type} = this.props;
         return(
-            <div>
-                <label>{label}</label>
-                <input {...input} placeholder={label} type={type} style={{marginTop:20+'px'}} />
+            <div className='inputcomponent'>
+                <div>
+                    <input {...input} placeholder={label} type={type} label={label}/>
+                </div>
             </div>
         )
     }
@@ -23,17 +24,6 @@ class LoginUiform extends React.Component{
             name:'',
         };
     }
-// 定义样式
-    style = {
-        textAlign:'center',
-    };
-    btn = {
-        backgroundColor:'green',
-        width:'70%',
-        height:'32px',
-        lineHeight:'32px',
-        marginTop:'20px'
-    };
 
     // 点击提交时出发函数
     handleSubmit = (e) => {
@@ -43,14 +33,15 @@ class LoginUiform extends React.Component{
 
     render(){
         return (
-            <div>
-                <form onSubmit={this.handleSubmit} style={this.style}>
+            <div className='loginform'>
+                <form onSubmit={this.handleSubmit}>
                     <div>
-                        <p>登录</p>
+                        <p>Sign in</p>
+                        <p>Please sign-in using your existing account</p>
                     </div>
-                    <Field name="username" component={inputField}/>
-                    <Field name="password" component={inputField}/>
-                    <button type="submit" style={this.btn}>submit</button>
+                    <Field name="username" component={inputField} label="Username or Email address"/>
+                    <Field name="password" component={inputField} label="Password"/>
+                    <button type="submit" >login</button>
                 </form>
                 <div>
                     <p>{this.state.name}</p>

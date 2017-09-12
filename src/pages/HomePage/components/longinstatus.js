@@ -11,22 +11,22 @@ class LoginStatus extends React.Component{
 
             if(this.props.loginstatus.status == "unlogin"){
                 return(
-                    <div>
+                    <div className='iflogin'>
                         <p>未登录</p>
                     </div>
                 )
             }else if(this.props.loginstatus.status == "logining"){
                 return(
-                    <div>
+                    <div className='iflogin'>
                         <p>正在登录</p>
                     </div>
                 )
             }else if(this.props.loginstatus.status == "logined"){
                 return(
-                    <div>
+                    <div className='iflogin'>
                         <p>已登录</p>
-                        <p><span>账号</span>{this.props.loginstatus.account}</p>
-                        <p style={{wordWrap:'break-word'}}><span>token</span>{this.props.loginstatus.token}</p>
+                        <p><span>账号:</span><span>{this.props.loginstatus.account}</span></p>
+                        <p><span>token:</span><span>{this.props.loginstatus.token}</span></p>
                     </div>
                 )
             }else {

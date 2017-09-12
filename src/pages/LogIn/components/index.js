@@ -12,20 +12,14 @@ class LoginUi extends React.Component{
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
     }
 
-    componentWillMount(){
-        // console.log(this.props.loginactions)
-    }
 
     render(){
         return (
-            <div>
-                <h2>登陆测试</h2>
+            <div className='loginui'>
                 <LoginUiform style={this.style} loginfun={this.props.loginactions.loginstatusActionlogining}/>
             </div>
         )
     }
-
-
 }
 
 
@@ -33,7 +27,7 @@ const mapStateToProps = state => {
     return {
         logininfotest:state.form.testlogin
     }
-}
+};
 
 const mapDispatchToProps = dispatch => {
     return{

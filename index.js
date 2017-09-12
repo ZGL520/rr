@@ -11,9 +11,10 @@ import configureStore from './src/common/store/configureStore'
 // 通用样式
 import './src/common/static/css/common.less';
 import './src/common/static/css/font.css';
+import './src/common/static/index.less'
 
 
-// import 也页面组件
+// import 页面组件
 import HomePage from './src/pages/HomePage/containers';
 import LogIn from './src/pages/LogIn/containers';
 import ContactUs from './src/pages/contactus/containers/index';
