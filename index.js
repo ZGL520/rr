@@ -11,7 +11,6 @@ import configureStore from './src/common/store/configureStore'
 // 通用样式
 import './src/common/static/css/common.less';
 import './src/common/static/css/font.css';
-import './src/common/static/index.less'
 
 
 // import 页面组件

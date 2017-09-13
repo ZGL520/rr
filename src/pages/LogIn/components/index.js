@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
 import loginstatusAction from '../actions/index'
-
+import Register from './register'
 
 class LoginUi extends React.Component{
     constructor(props){
@@ -17,6 +17,7 @@ class LoginUi extends React.Component{
         return (
             <div className='loginui'>
                 <LoginUiform style={this.style} loginfun={this.props.loginactions.loginstatusActionlogining}/>
+                <Register/>
             </div>
         )
     }

@@ -2,7 +2,7 @@ import React,{Component} from 'react'
 import { Field, reduxForm } from 'redux-form'
 //定义校验的方法
 const validate = values => {
-  const errors = {}
+  const errors = {};
   if (!values.firstname) {
     errors.firstname = '请输入名字'
   } else if (values.firstname.length > 15) {
@@ -42,9 +42,7 @@ class renderField extends Component{
   }
 }
 class ContactForm extends Component{
-  style = {
-    margin:'10px',
-  }
+
   render(){
     const { handleSubmit, submitting } = this.props
     return (
@@ -72,7 +70,7 @@ class ContactForm extends Component{
         </div>
         <Field name="question" type="textarea" component={renderField} label="question"/>
         <div>
-          <button type="submit" className="btn btn-success" disabled={submitting} style={{marginRight:'20px'}}>Submit</button>
+          <button type="submit" className="btn btn-success" disabled={submitting}>Submit</button>
         </div>
       </form>
     )

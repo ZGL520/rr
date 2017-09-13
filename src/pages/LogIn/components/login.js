@@ -17,7 +17,6 @@ class inputField extends React.Component{
 
 // 输入登陆信息组件
 class LoginUiform extends React.Component{
-
     constructor(props){
         super(props);
         this.state = {
