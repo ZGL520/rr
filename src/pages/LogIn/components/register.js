@@ -1,7 +1,5 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {fpostRequest, postRequest} from "../../../common/fetch/requests";
-import querystring from 'querystring'
 import registaction from '../actions/registaction'
 import Registerui from './registerui'
 import {bindActionCreators} from 'redux'
@@ -14,7 +12,7 @@ class Register extends React.Component{
         if (this.props.registstatus.status == ''){
             return(
                 <div>
-                    <p>注册</p>
+                    <p>Regist</p>
                     <Registerui registers={this.props.register} registersactions={this.props.registaction}/>
                 </div>
             )
@@ -49,7 +47,7 @@ class Register extends React.Component{
         }else {
             return(
                 <div>
-                    <p>注册</p>
+                    <p>Regist</p>
                     <Registerui registers={this.props.register} registersactions={this.props.registaction}/>
                 </div>
             )

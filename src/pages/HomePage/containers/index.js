@@ -28,7 +28,7 @@ class HomePage extends React.Component {
     render() {
         return (
             <div>
-                <Header title='主页' rightLink='/login' rightLinkContent='登录'/>
+                <Header title='home' rightLink='/login' rightLinkContent='登录/注册'/>
                 <List>
                     <Item><Link className='fontBlack' to="/contactus">联系我们</Link></Item>
                 </List>
