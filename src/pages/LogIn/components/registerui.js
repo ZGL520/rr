@@ -44,37 +44,32 @@ class Registerui extends React.Component{
             registe:''
         }
     }
-    componentDidMount(){
-        // console.log(this.props.registersactions)
-    }
+
     handleSubmit = (e) => {
+
         e.preventDefault();
-        this.props.registersactions.registstatusregistting('registting');
         // console.log(this.props.registers.values);
-        const data = querystring.stringify(this.props.registers.values);
-        const url = 'http://kb.buyercamp.com/apir/user/register';
-        postRequest(url,data).then(res => {
-            if (res.status == 200){
-                this.props.registersactions.registstatussuccess('success')
-            }
-        }).catch(error => {
-            if (error.response){
-                // console.log(error.response);
-                if (error.response.status == 406){
-                    // console.log(error.response.data.errorMsg);
-                    this.props.registersactions.registstatusfield(error.response.data.errorMsg);
-                }else {
-                    this.props.registersactions.registstatusother(error.response.data.errorMsg)
+
+            this.props.registersactions.registstatusregistting('registting');
+            const data = querystring.stringify(this.props.registers.values);
+            const url = 'http://kb.buyercamp.com/apir/user/register';
+            postRequest(url,data).then(res => {
+                if (res.status == 200){
+                    this.props.registersactions.registstatussuccess('success')
                 }
-            }else {
-                // console.log('error',error.message)
-            }
-        })
+            }).catch(error => {
+                if (error.response){
+                    if (error.response.status == 406){
+                        this.props.registersactions.registstatusfield(error.response.data.errorMsg);
+                    }else {
+                        this.props.registersactions.registstatusother(error.response.data.errorMsg)
+                    }
+                }else {
+                }
+            })
+
     };
-    handleOnchange = () => {
-        // console.log(this.props);
-        // console.log(this.props.registers.values)
-    };
+
     render(){
         const {submitting} = this.props;
         return(

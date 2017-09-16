@@ -10,27 +10,11 @@ class Configbutton extends React.Component{
 
     handleClick = (e) => {
         e.preventDefault();
-        console.log(this.props.registactions);
         this.props.registactions.registstatusinitit('');
-        console.log(this.props.registstatuss.status);
 
     };
 
     render(){
-
-        // if(this.props.registstatuss.status == 'success'){
-        //     return(
-        //         <div>
-        //             <button className="button" onClick={this.handleClick(this.props.registactions.registstatusinitit(''))}>去登陆</button>
-        //         </div>
-        //     )
-        // }else if(this.props.registstatuss.status == 'field') {
-        //     return(
-        //         <div>
-        //             <button className="button" onClick={this.handleClick(this.props.registactions.registstatusinitit(''))}>重新注册</button>
-        //         </div>
-        //     )
-        // }
         return(
             <div>
                 <button className="button" onClick={this.handleClick}>确定</button>

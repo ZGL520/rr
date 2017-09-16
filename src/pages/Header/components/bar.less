@@ -1,0 +1,41 @@
+.bar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(128,128,128,0.5);
+  z-index: 1000;
+  display: none;
+    .navbar{
+      width: 70vw;
+      height: 100vh;
+      background-color: rgba(0,0,0,0.3);
+      p{
+        color: red;
+      }
+    }
+    .navempty{
+      width: 30vw;
+      height: 100vh;
+      background-color: rgba(128,128,128,0.5);
+    }
+
+}
+
+@keyframes baranshow {
+  from {
+    width: 0vh;
+  }
+  to {
+    width: 100vh;
+  }
+}
+
+@keyframes baranhide {
+  from {
+    width: 100vw;
+
+  }
+  to {
+    width: 0vw;
+  }
+}

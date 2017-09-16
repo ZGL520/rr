@@ -1,12 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import { List } from 'antd-mobile';
+import {bindActionCreators} from 'redux'
+import {connect} from 'react-redux'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
+import PropTypes from 'prop-types'
+
+// 引入组件
 import Header from '../../../pages/Header/components';
 import LoginStatus from '../components/longinstatus';
-import {bindActionCreators} from 'redux'
 import loginstatusAction from '../../LogIn/actions/index'
-import {connect} from 'react-redux'
+
+
 const Item = List.Item;
 
 class HomePage extends React.Component {
@@ -25,6 +30,9 @@ class HomePage extends React.Component {
             this.props.loginactions.loginstatusActionunlogin
         }
     }
+
+
+
     render() {
         return (
             <div>
@@ -39,6 +47,7 @@ class HomePage extends React.Component {
                     </div>
                 </div>
 
+
             </div>
         )
     }
@@ -46,12 +55,12 @@ class HomePage extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        // logininfotest:state.form.testlogin
+        barstatu : state.navbarreducer
     }
 }
 const mapDispatchToProps = dispatch => {
     return{
-        loginactions:bindActionCreators(loginstatusAction,dispatch)
+        loginactions:bindActionCreators(loginstatusAction,dispatch),
     }
 };
 export default connect(mapStateToProps,mapDispatchToProps)(HomePage);
