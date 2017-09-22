@@ -9,7 +9,8 @@ import PropTypes from 'prop-types'
 // 引入组件
 import Header from '../../../pages/Header/components';
 import LoginStatus from '../components/longinstatus';
-import loginstatusAction from '../../LogIn/actions/index'
+import loginstatusAction from '../../LogIn/actions/index';
+import Footer from '../../footer/containers/index'
 
 
 const Item = List.Item;
@@ -46,6 +47,7 @@ class HomePage extends React.Component {
                         <LoginStatus/>
                     </div>
                 </div>
+                <Footer/>
 
 
             </div>
