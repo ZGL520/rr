@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from '../../../pages/Header/components';
+import Header from '../../Header/containers/index';
 import ContactForm from '../components/contactform'
 
 import {qspost} from '../../../common/fetch/requests'

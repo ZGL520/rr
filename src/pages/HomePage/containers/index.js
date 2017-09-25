@@ -1,19 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-import { List } from 'antd-mobile';
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
+import { Router, Route,Switch,IndexRoute} from 'react-router-dom';
+import Hostpage from '../../hostpage/containers/index'
+
 import PropTypes from 'prop-types'
 
 // 引入组件
-import Header from '../../../pages/Header/components';
-import LoginStatus from '../components/longinstatus';
+import Header from '../../Header/containers/index';
+import LoginStatus from '../../LogIn/components/longinstatus';
 import loginstatusAction from '../../LogIn/actions/index';
 import Footer from '../../footer/containers/index'
+import Cart from '../../cart/containers/index'
+import Customercentre from "../../customercentre/container/index";
 
-
-const Item = List.Item;
 
 class HomePage extends React.Component {
     constructor(props){
@@ -21,49 +23,24 @@ class HomePage extends React.Component {
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
     }
 
-    componentDidMount(){
-        const username = sessionStorage.getItem('bkusername');
-        const usertoken = sessionStorage.getItem('bktoken');
-        if(username != null || usertoken != null){
-            const datas = {username,usertoken};
-            this.props.loginactions.loginstatusActionlogined(datas);
-        }else {
-            this.props.loginactions.loginstatusActionunlogin
-        }
-    }
-
-
-
     render() {
         return (
             <div>
                 <Header title='home' rightLink='/login' rightLinkContent='登录/注册'/>
-                <List>
-                    <Item><Link className='fontBlack' to="/contactus">联系我们</Link></Item>
-                </List>
-                <div className='loginstatus'>
-                    <h3>登陆状态</h3>
-                    <div>
-                        <LoginStatus/>
-                    </div>
-                </div>
+                {/*<Hostpage/>*/}
+                {/*<Cart/>*/}
+                {/*<Customercentre/>*/}
+                {/*<IndexRoute component={Hostpage}/>*/}
+                {/*<Route path='/' component={HomePage}/>*/}
+                <Route path='/hostpage' component={Hostpage}/>
+                <Route path='/cart' component={Cart}/>
+                <Route path='/customercentre' component={Customercentre}/>
                 <Footer/>
-
-
             </div>
         )
     }
 }
 
-function mapStateToProps(state) {
-    return {
-        barstatu : state.navbarreducer
-    }
-}
-const mapDispatchToProps = dispatch => {
-    return{
-        loginactions:bindActionCreators(loginstatusAction,dispatch),
-    }
-};
-export default connect(mapStateToProps,mapDispatchToProps)(HomePage);
+
+export default HomePage;
 

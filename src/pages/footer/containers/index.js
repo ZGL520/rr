@@ -1,12 +1,16 @@
 import React from 'react'
-// import BasicRowDemo from '../../../../node_modules/antd-mobile/lib/list-view/demo/basic-row'
-
+import {Link} from 'react-router-dom'
 class Footer extends React.Component{
     render(){
         return(
-            <div>
-                <h1>底部</h1>
-                {/*<BasicRowDemo/>*/}
+            <div className="footer">
+                <div>
+                    <ul>
+                        <li><Link to="hostpage">首页</Link></li>
+                        <li><Link to="cart">购物车</Link></li>
+                        <li><Link to="customercentre">个人中心</Link></li>
+                    </ul>
+                </div>
             </div>
         )
     }

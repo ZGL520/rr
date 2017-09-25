@@ -10,7 +10,7 @@ import barstatus from "../actions/navbaraction";
 // import Bar from './bar'
 
 //引入antd导航栏
-import Barantd from './barantd'
+// import Barantd from './barantd'
 
 class HeaderComponent extends React.Component {
 
@@ -29,8 +29,7 @@ class HeaderComponent extends React.Component {
                          ]}
                 >{this.props.title}
                 </NavBar>
-                <Barantd title='home' rightLink='/login' rightLinkContent='登录/注册'/>
-            </div>
+                </div>
         )
     }
 }
@@ -39,7 +38,7 @@ HeaderComponent.propTypes = {
     title: PropTypes.string.isRequired,
     rightLink:PropTypes.string.isRequired,
     rightLinkContent:PropTypes.string.isRequired
-}
+};
 
 
 

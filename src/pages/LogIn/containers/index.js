@@ -1,6 +1,6 @@
 import React from 'react';
 import {render} from 'react-dom';
-import Header from '../../Header/components';
+import Header from '../../Header/containers/index';
 import {postRequest} from '../../../common/fetch/requests';
 import querystring from 'querystring';
 import {connect} from 'react-redux';
