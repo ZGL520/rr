@@ -12,9 +12,11 @@ import PropTypes from 'prop-types'
 import Header from '../../Header/containers/index';
 import LoginStatus from '../../LogIn/components/longinstatus';
 import loginstatusAction from '../../LogIn/actions/index';
-import Footer from '../../footer/containers/index'
+import Footer from '../../footer/containers/footer'
+import Homefooter from '../../footer/containers/index'
 import Cart from '../../cart/containers/index'
 import Customercentre from "../../customercentre/container/index";
+import Body from './body'
 
 
 class HomePage extends React.Component {
@@ -27,15 +29,7 @@ class HomePage extends React.Component {
         return (
             <div>
                 <Header title='home' rightLink='/login' rightLinkContent='登录/注册'/>
-                {/*<Hostpage/>*/}
-                {/*<Cart/>*/}
-                {/*<Customercentre/>*/}
-                {/*<IndexRoute component={Hostpage}/>*/}
-                {/*<Route path='/' component={HomePage}/>*/}
-                <Route path='/hostpage' component={Hostpage}/>
-                <Route path='/cart' component={Cart}/>
-                <Route path='/customercentre' component={Customercentre}/>
-                <Footer/>
+                <Body/>
             </div>
         )
     }

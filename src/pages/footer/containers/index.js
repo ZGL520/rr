@@ -1,19 +1,36 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
-class Footer extends React.Component{
+import Footer from './footer'
+import Customercentre from "../../customercentre/container/index";
+import Cart from "../../cart/containers/index";
+import Hostpage from "../../hostpage/containers/index";
+import Login from "../../LogIn/containers/index";
+import { Router,Route,hashHistory,IndexRoute} from 'react-router';
+import HomePage from "../../HomePage/containers/index";
+
+
+class Homepageroute extends React.Component{
     render(){
         return(
-            <div className="footer">
-                <div>
-                    <ul>
-                        <li><Link to="hostpage">首页</Link></li>
-                        <li><Link to="cart">购物车</Link></li>
-                        <li><Link to="customercentre">个人中心</Link></li>
-                    </ul>
-                </div>
+            <div>
+                {/*<IndexRoute component={Hostpage}/>*/}
+                <Route path='/' component={Hostpage}/>
+                <Route path='/cart' component={Cart}/>
+                <Route path='/customercentre' component={Customercentre}/>
+                <Route path='/login' component={Login}/>
+            </div>
+        )
+    }
+}
+class Homefooter extends React.Component{
+    render(){
+        return(
+            <div>
+                <Homepageroute/>
+                <Footer/>
+                {this.props.children}
             </div>
         )
     }
 }
 
-export default Footer;
+export default Homefooter

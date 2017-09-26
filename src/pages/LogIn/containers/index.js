@@ -39,14 +39,14 @@ class LogIn extends React.Component{
           this.loginSub();
           return(
               <div className='userloginstatus'>
-                  <Header title='用户登录' rightLink='/' rightLinkContent='返回'/>
+                  {/*<Header title='用户登录' rightLink='/' rightLinkContent='返回'/>*/}
                   <p>正在登陆</p>
               </div>
           )
       }else if (this.props.logintoken.status == "unlogin"){
           return(
               <div className='userloginstatus'>
-                  <Header title='用户登录' rightLink='/' rightLinkContent='返回'/>
+                  {/*<Header title='用户登录' rightLink='/' rightLinkContent='返回'/>*/}
                   <LoginUi/>
               </div>
 
@@ -54,7 +54,7 @@ class LogIn extends React.Component{
       }else if (this.props.logintoken.status == "logined"){
           return(
               <div className='userloginstatus'>
-                  <Header title='用户登录' rightLink='/' rightLinkContent='返回'/>
+                  {/*<Header title='用户登录' rightLink='/' rightLinkContent='返回'/>*/}
                   <p>登录成功</p>
               </div>
           )
