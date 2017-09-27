@@ -9,7 +9,7 @@ const svgDirs = [
 ];
 
 module.exports = {
-    entry: './footer.js',
+    entry: './index.js',
     output: {
         path: path.resolve(__dirname, './build'),
         filename: 'bundle.js',
