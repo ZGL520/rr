@@ -6,6 +6,7 @@ import PureRenderMixin from 'react-addons-pure-render-mixin'
 import loginstatusAction from '../actions/index'
 import Register from './register'
 
+
 class LoginUi extends React.Component{
     constructor(props){
         super(props);
@@ -16,7 +17,7 @@ class LoginUi extends React.Component{
     render(){
         return (
             <div className='loginui'>
-                <LoginUiform style={this.style} loginfun={this.props.loginactions.loginstatusActionlogining}/>
+                <LoginUiform loginfun={this.props.loginactions.loginstatusActionlogining}/>
                 <Register/>
             </div>
         )

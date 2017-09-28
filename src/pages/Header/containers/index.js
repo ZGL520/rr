@@ -21,16 +21,31 @@ class HeaderComponent extends React.Component {
     };
 
     render() {
-        return (
-            <div>
-                <NavBar leftContent={<Link className='fontWhite icon-home2' to='/' onClick={this.handlebarshow}></Link>}
-                         rightContent={[
-                             <Link className='fontWhite' key='1' to={this.props.rightLink}>{this.props.rightLinkContent}</Link>
-                         ]}
-                >{this.props.title}
-                </NavBar>
+        if (this.props.loginstatus.status == "logined"){
+            return(
+                <div>
+                    <NavBar leftContent={<Link className='fontWhite icon-home2' to='/' onClick={this.handlebarshow}></Link>}
+                            rightContent={[
+                                <Link className='fontWhite' key='1' to='/customercentre'>{this.props.loginstatus.account}</Link>
+
+                            ]}
+                    >{this.props.title}
+                    </NavBar>
                 </div>
-        )
+            )
+        }else {
+            return (
+                <div>
+                    <NavBar leftContent={<Link className='fontWhite icon-home2' to='/' onClick={this.handlebarshow}></Link>}
+                            rightContent={[
+                                <Link className='fontWhite' key='1' to={this.props.rightLink}>{this.props.rightLinkContent}</Link>
+                            ]}
+                    >{this.props.title}
+                    </NavBar>
+                </div>
+            )
+        }
+
     }
 }
 
@@ -44,7 +59,7 @@ HeaderComponent.propTypes = {
 
 function mapStateToProps(state) {
     return {
-        barstatu : state.navbarreducer
+        loginstatus : state.loginstatusReducer
     }
 }
 const mapDispatchToProps = dispatch => {

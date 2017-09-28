@@ -29,7 +29,13 @@ class LoginStatus extends React.Component{
                         <p><span>token:</span><span>{this.props.loginstatus.token}</span></p>
                     </div>
                 )
-            }else {
+            }else if(this.props.loginstatus.status == "loginfield"){
+                return(
+                    <div className='iflogin'>
+                        <p>登陆失败</p>
+                    </div>
+                )
+            } else {
                 return(
                     <div>
                         <p>错误</p>

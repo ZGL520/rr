@@ -1,0 +1,42 @@
+@import '../../../common/static/constants';
+
+.loginout{
+  .loginoutconfig{
+    //display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.3);
+    div{
+      margin: 30vh auto;
+      background-color: #fff;
+      width: 80vw;
+      height: 30vh;
+      border-radius: 15px;
+      text-align: center;
+      padding-top: 30px;
+      p{
+        font-size: 18px;
+        margin: 24px auto;
+      }
+    }
+  }
+}
+
+@keyframes loginoutconfig {
+  from{
+    display: none}
+  to{
+    display: block;
+  }
+}
+
+@keyframes loginoutconfigdel {
+  from{
+    display: block}
+  to{
+    display: none;
+  }
+}

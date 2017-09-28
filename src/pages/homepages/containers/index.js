@@ -24,8 +24,4 @@ const Homepages = () => (
 );
 
 
-
-
-
-
 export default Homepages;

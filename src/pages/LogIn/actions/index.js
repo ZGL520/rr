@@ -1,4 +1,4 @@
-import {LOGINSTATUSLOGINED, LOGINSTATUSLOGINING, LOGINSTATUSUNLOGIN} from "../constants/index";
+import {LOGINSTATUSFIELD, LOGINSTATUSLOGINED, LOGINSTATUSLOGINING, LOGINSTATUSUNLOGIN} from "../constants/index";
 // 已登录
 const loginstatusActionlogined = function(data) {
     return{
@@ -22,5 +22,12 @@ const loginstatusActionunlogin = data => {
         data
     }
 };
+const loginstatusActionunloginfield = data => {
 
-export default {loginstatusActionlogined,loginstatusActionlogining,loginstatusActionunlogin};
+    return{
+        type:LOGINSTATUSFIELD,
+        data
+    }
+};
+
+export default {loginstatusActionlogined,loginstatusActionlogining,loginstatusActionunlogin,loginstatusActionunloginfield};

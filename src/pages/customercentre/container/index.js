@@ -7,6 +7,7 @@ import {connect} from 'react-redux'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
 import loginstatusAction from "../../LogIn/actions/index";
 import LoginStatus from '../../LogIn/components/longinstatus';
+import Loginout from '../../LogIn/components/loginout'
 
 
 class Customercentre extends React.Component{
@@ -21,14 +22,18 @@ class Customercentre extends React.Component{
             const datas = {username,usertoken};
             this.props.loginactions.loginstatusActionlogined(datas);
         }else {
-            this.props.loginactions.loginstatusActionunlogin
+            this.props.loginactions.loginstatusActionunlogin()
         }
     }
+
     render(){
         return(
             <div>
                 <List>
                     <Link className='fontBlack' to="/contactus">联系我们</Link>
+                </List>
+                <List>
+                    <Loginout/>
                 </List>
                 <div className='loginstatus'>
                     <h3>登陆状态</h3>
@@ -36,7 +41,7 @@ class Customercentre extends React.Component{
                         <LoginStatus/>
                     </div>
                 </div>
-
+                {/*<Loginout/>*/}
             </div>
         )
     }

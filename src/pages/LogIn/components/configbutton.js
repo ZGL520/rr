@@ -35,5 +35,5 @@ const mapDispatchToState = dispatch => {
     return{
         registactions:bindActionCreators(registaction,dispatch)
     }
-}
+};
 export default connect(mapStateToProps,mapDispatchToState)(Configbutton)
