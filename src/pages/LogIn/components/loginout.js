@@ -28,7 +28,6 @@ class Loginout extends React.Component{
         const url = 'http://kb.buyercamp.com/apir/user/loginOut';
         const datas = {user_token:this.props.loginstatus.token};
         const data = querystring.stringify(datas);
-        console.log(this.props.loginstatus.token);
         postRequest(url,data).then(res => {
             if (res.status == 200 ){
                 // console.log(res)
