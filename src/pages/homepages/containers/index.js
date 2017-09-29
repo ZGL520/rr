@@ -1,13 +1,14 @@
 import React from 'react'
 import {BrowserRouter as Router,Route,Link} from 'react-router-dom'
 
-import Cart from '../../cart/containers/index'
+
 import Customercentre from '../../customercentre/container/index'
 import Hostpage from "../../hostpage/containers/index"
 import Footer from '../../footer/containers/footer'
 import Header from '../../Header/containers/index'
 import LogIn from '../../LogIn/containers/index'
 import ContactUs from '../../contactus/containers/index'
+import Cart from '../../cart/containers/index'
 
 const Homepages = () => (
     <Router>
